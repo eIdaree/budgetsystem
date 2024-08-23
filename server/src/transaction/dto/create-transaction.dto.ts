@@ -16,7 +16,7 @@ export class CreateTransactionDto {
 
     @IsNotEmpty()
     category: Category;
-    @IsNotEmpty()
-    author: User
+
+    user: User
     comment:string
 }
