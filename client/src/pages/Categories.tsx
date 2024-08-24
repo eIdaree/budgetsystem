@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import { FC, useState } from 'react'
 import { AiFillCloseCircle, AiFillEdit } from 'react-icons/ai'
 import { FaPlus } from 'react-icons/fa'
 import { Form, useLoaderData } from 'react-router-dom'
@@ -6,7 +6,6 @@ import CategoryModal from '../components/CategoryModule'
 import { instance } from '../api/axios.api'
 import { ICategory } from '../types/types'
 
-type Props = {}
 
 export const categoriesAction = async ({request}:any) => {
   switch (request.method){
@@ -40,8 +39,8 @@ export const categoryLoader = async() => {
   return data
 }
 
-const Categories: FC = (props: Props) => {
-  const categories = useLoaderData() as ICategory
+const Categories: FC = () => {
+  const categories = useLoaderData() as ICategory[]
   const [categoryId, setCategoryId] = useState<number>(0)
   const [isEdit, setIsEdit] = useState<boolean>(false)
 

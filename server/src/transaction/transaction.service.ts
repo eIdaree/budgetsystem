@@ -31,8 +31,11 @@ export class TransactionService {
       where: {
         user: { id }
       },
+      relations: {
+        category: true
+      },
       order:{
-        diteTime: 'DESC'
+        dateTime: 'DESC'
       }
     })
     return transactions;
@@ -79,7 +82,7 @@ export class TransactionService {
         },
       },
       order:{
-        diteTime:"DESC"
+        dateTime:"DESC"
       },
       take: limit,
       skip: (page - 1) * limit,

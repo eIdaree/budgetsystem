@@ -28,7 +28,7 @@ export class Transaction {
     comment:string
 
     @CreateDateColumn()
-    diteTime: Date
+    dateTime: Date
 
     @UpdateDateColumn()
     updateAt: Date
